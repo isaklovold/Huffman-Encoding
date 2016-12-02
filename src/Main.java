@@ -19,6 +19,8 @@ public class Main {
     private Node root;
     private BuildTree huffmanTree;
 
+    private HashMap<BuildTree, Node> huffmanTreeMap;
+
     private HashMap<Character, String> encodedCharacter;
 
     private long uncompressed, compressed, compressionRatio;
@@ -34,7 +36,7 @@ public class Main {
         root = new Node();
         huffmanTree = new BuildTree();
         encodedCharacter = new HashMap<>();
-
+        huffmanTreeMap = new HashMap<>();
     }
 
     /**
@@ -52,35 +54,29 @@ public class Main {
             input = in.nextLine().toUpperCase();
             switch (input){
                 case "1":
-                    try {
-                        // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
-                        frequency = new HashMap<>();
-
-                        // COMPRESS SINGLE FILE
-                        System.out.println("Please enter name of file to compress without file extension: ");
-                        fileName = new File(in.next() + ".txt");
-                        createHuffmantree(fileName);
-
-                        // CREATE A COMPRESSED FILE
-                        compressFile();
-                    } catch (FileNotFoundException e){
-                        System.err.println("Sorry, couldn't find that file...");
-                    }
+                    optionOne();
                     break;
                 case "2":
-                    readMulitpleFiles();
+                    optionTwo();
                     break;
                 case "3":
-                    // PRINT FREQUENCY TABLE
-                    if(huffmanTree != null) {
-                        huffmanTree.printFrequencyTable();
-                    } else {
-                        System.err.println("Huffman Tree is not created yet, please try again later!");
-                    }
+                    optionThree();
                     break;
                 case "4":
+                    optionFour();
+                    break;
+                case "5":
                     // PRINT ROOT NODE INFO
                     System.out.println(root.toString());
+                    break;
+                case "6":
+                    // PRINTS ALL ROOT NODES INFO
+                    if(huffmanTreeMap != null){
+                        for(Node n: huffmanTreeMap.values())
+                        {
+                            System.out.println(n.toString());
+                        }
+                    }
                     break;
                 case "Q":
                     // QUIT APPLICATION
@@ -92,7 +88,29 @@ public class Main {
         } while(!input.equals("Q"));
     }
 
-    public void readMulitpleFiles() throws IOException {
+    public void optionOne() throws IOException{
+        try {
+            // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
+            frequency = new HashMap<>();
+
+            // COMPRESS SINGLE FILE
+            System.out.println("Please enter name of file to compress without file extension: ");
+            fileName = new File(in.next() + ".txt");
+            createHuffmantree(fileName);
+
+            // CREATE A COMPRESSED FILE
+            compressFile();
+
+            // ADDS HUFFMANTREE AND ROOT NODE OF HUFFMANTREE TO A MAP IF IT'S NOT ALREADY THERE
+            if(huffmanTreeMap != null && !huffmanTreeMap.containsKey(huffmanTree) && !huffmanTreeMap.containsValue(root)){
+                huffmanTreeMap.put(huffmanTree, root);
+            }
+        } catch (FileNotFoundException e){
+            System.err.println("Sorry, couldn't find that file...");
+        }
+    }
+
+    public void optionTwo() throws IOException {
         try{
             // CHOOSE FOLDER WITH MULTIPLE FILES TO COMPRESS
             System.out.println("Please enter path to folder with files to compress: ");
@@ -100,17 +118,40 @@ public class Main {
             for(File file : dir.listFiles()){
                 try {
                     // CHECK THAT IT'S NOT THE DEFAULT FOLDER FILE FOR MAC
-                    if(!file.equals("./.DS_Store")) {
+                    if(!file.getName().equals(".DS_Store")) {
                         // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
                         frequency = new HashMap<>();
                         createHuffmantree(file);
+
+                        // ADDS HUFFMANTREE AND ROOT NODE OF HUFFMANTREE TO A MAP
+                        if(huffmanTreeMap != null && !huffmanTreeMap.containsKey(huffmanTree) && !huffmanTreeMap.containsValue(root)){
+                            huffmanTreeMap.put(huffmanTree, root);
+                        }
                     }
                 } catch (FileNotFoundException er){
                     System.err.println("Sorry, couldn't any files inside that folder...");
                 }
             }
         } catch (NullPointerException e){
-            System.err.println("Sorry, couldn't find that folder...");
+            System.err.println("Sorry, couldn't find that file or folder...");
+        }
+    }
+
+    public void optionThree(){
+        // PRINT FREQUENCY TABLE
+        if(huffmanTree != null) {
+            huffmanTree.printFrequencyTable();
+        } else {
+            System.err.println("Huffman Tree is not created yet, please try again later!");
+        }
+    }
+
+    public void optionFour(){
+        if(huffmanTreeMap != null){
+            for(BuildTree bt: huffmanTreeMap.keySet())
+            {
+                bt.printFrequencyTable();
+            }
         }
     }
 
@@ -190,7 +231,9 @@ public class Main {
         System.out.println( "1. Compress single file: \n" +
                 "2. Compress all files in a folder: \n" +
                 "3. Print frequency table \n" +
-                "4. Print root node: \n" +
+                "4. Print frequency table off all files: \n" +
+                "5. Print root node: \n" +
+                "6. Print root node of huffman trees: \n" +
                 "Q. Quit");
     }
 
