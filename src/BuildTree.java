@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
  */
 public class BuildTree {
 
-    String message;
+    private String message;
 
     private Map<Character, Integer> frequency;
     private LinkedList<Node> huffmanTree;
@@ -69,7 +69,7 @@ public class BuildTree {
 
     /**
      * Creating nodes out of all characters and their frequency value,
-     * and adds them to a LinkedList
+     * and adds them to a LinkedList and to a PriorityQue.
      */
     public void setNodes() {
         Set set = frequency.entrySet();
@@ -83,6 +83,7 @@ public class BuildTree {
             int v = value.intValue();
             Node node = new Node(kv, v);
             huffmanTree.add(node);
+            huffmanTreeQue.add(node);
         }
     }
 
@@ -91,8 +92,10 @@ public class BuildTree {
      * 2. Creates a new Node of the combined name and value.
      * 3. Sets the first node to be the left child and the second
      * to be the right child of the new node that is the root node.
+     * 4. Adds root node to LinkedList and to PriorityQue before it
+     *    deletes child nodes in the LinkedList.
      *
-     * 4. Repeats step 1-3 until there is only one node left
+     * 4. Repeats step 1-4 until there is only one node left
      */
     public void pairNodes() {
         do {
@@ -108,8 +111,6 @@ public class BuildTree {
             root.setLeftChild(leftChild);
             root.setRightChild(rightChild);
 
-            huffmanTreeQue.add(leftChild);
-            huffmanTreeQue.add(rightChild);
             huffmanTreeQue.add(root);
 
             for (int i = 0; i < huffmanTree.size(); i++) {
@@ -133,21 +134,41 @@ public class BuildTree {
 
         } while (huffmanTree.size() > 2);
 
-        leftChild = huffmanTree.get(0);
-        leftChild.setIndex(0);
-        rightChild = huffmanTree.get(1);
-        rightChild.setIndex(1);
-        Node n = new Node(huffmanTree.get(0).getCharacter() + huffmanTree.get(1).getCharacter(), huffmanTree.get(0).getValue() + huffmanTree.get(1).getValue());
-        n.setLeftChild(leftChild);
-        n.setRightChild(rightChild);
-        root = n;
-        huffmanTree.add(n);
+        // IF HUFFMANTREE ONLY HAS A SIZE OF 2
+        if(huffmanTree.size() == 2) {
+            leftChild = huffmanTree.get(0);
+            leftChild.setIndex(0);
+            rightChild = huffmanTree.get(1);
+            rightChild.setIndex(1);
+            Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+            n.setLeftChild(leftChild);
+            n.setRightChild(rightChild);
+            root = n;
+            huffmanTree.add(root);
 
-        for (int i = 0; i < huffmanTree.size(); i++) {
-            if (!huffmanTree.get(i).equals(n)) {
-                huffmanTree.remove(i);
-            } else {
-                //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
+            for (int i = 0; i < huffmanTree.size(); i++) {
+                if (!huffmanTree.get(i).equals(n)) {
+                    huffmanTree.remove(i);
+                } else {
+                    //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
+                }
+            }
+            // ELSE IS IF HUFFMANTREE ONLY HAS A SIZE OF 1
+        } else {
+            System.out.println("HuffmanTree: " + huffmanTree.toString());
+            System.out.println("HuffmanTreeQue: " + huffmanTreeQue.toString());
+            leftChild = huffmanTree.get(0);
+            rightChild = root;
+            Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+            root = n;
+            huffmanTree.add(root);
+
+            for (int i = 0; i < huffmanTree.size(); i++) {
+                if (!huffmanTree.get(i).equals(n)) {
+                    huffmanTree.remove(i);
+                } else {
+                    //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
+                }
             }
         }
     }
@@ -220,9 +241,14 @@ public class BuildTree {
         while (iterator.hasNext()){
             Map.Entry mentry = (Map.Entry)iterator.next();
             String c = new StringBuilder().append(mentry.getKey()).toString();
-            System.out.print("  " + mentry.getKey() + "             ");
+            if(c.equals("\r")) {
+                System.out.print("  \\r            ");
+            } else {
+                System.out.print("  " + mentry.getKey() + "             ");
+            }
             System.out.print(mentry.getValue() + "            ");
             System.out.println(characterEncoding(c));
+
             encodedCharacter.put((Character)mentry.getKey(), characterEncoding(c));
         }
         System.out.println();

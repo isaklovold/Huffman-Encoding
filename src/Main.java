@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
@@ -11,7 +12,7 @@ public class Main {
     private Scanner in;
     private String message;
 
-    private File fileName;
+    private File fileName, dir;
     private Scanner fileScanner;
 
     private HashMap<Character, Integer> frequency;
@@ -30,10 +31,10 @@ public class Main {
     public Main() {
         in = new Scanner(System.in);
 
-        frequency = new HashMap<>();
         root = new Node();
         huffmanTree = new BuildTree();
         encodedCharacter = new HashMap<>();
+
     }
 
     /**
@@ -51,29 +52,25 @@ public class Main {
             input = in.nextLine().toUpperCase();
             switch (input){
                 case "1":
-                    // READ FILE
-                    System.out.println("Enter name of file to compress: ");
-                    fileName = new File(in.next()+".txt");
-                    fileScanner = new Scanner(fileName);
+                    try {
+                        // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
+                        frequency = new HashMap<>();
 
-                    message = "";
+                        // COMPRESS SINGLE FILE
+                        System.out.println("Please enter name of file to compress without file extension: ");
+                        fileName = new File(in.next() + ".txt");
+                        createHuffmantree(fileName);
 
-                    while (fileScanner.hasNextLine()){
-                        message += fileScanner.nextLine() + "\n";
+                        // CREATE A COMPRESSED FILE
+                        compressFile();
+                    } catch (FileNotFoundException e){
+                        System.err.println("Sorry, couldn't find that file...");
                     }
-
-                    // CREATE HUFFMAN TREE
-                    if(message != null) {
-                        huffmanTree = new BuildTree(frequency, message);
-                        root = huffmanTree.build();
-                    } else {
-                        System.err.println("You have not entered a message or a file yet, please try again later!");
-                    }
-
-                    // CREATE A COMPRESSED FILE
-                    compressFile();
                     break;
                 case "2":
+                    readMulitpleFiles();
+                    break;
+                case "3":
                     // PRINT FREQUENCY TABLE
                     if(huffmanTree != null) {
                         huffmanTree.printFrequencyTable();
@@ -81,7 +78,7 @@ public class Main {
                         System.err.println("Huffman Tree is not created yet, please try again later!");
                     }
                     break;
-                case "3":
+                case "4":
                     // PRINT ROOT NODE INFO
                     System.out.println(root.toString());
                     break;
@@ -93,6 +90,51 @@ public class Main {
                 default:break;
             }
         } while(!input.equals("Q"));
+    }
+
+    public void readMulitpleFiles() throws IOException {
+        try{
+            // CHOOSE FOLDER WITH MULTIPLE FILES TO COMPRESS
+            System.out.println("Please enter path to folder with files to compress: ");
+            dir = new File(in.next());
+            for(File file : dir.listFiles()){
+                try {
+                    // CHECK THAT IT'S NOT THE DEFAULT FOLDER FILE FOR MAC
+                    if(!file.equals("./.DS_Store")) {
+                        // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
+                        frequency = new HashMap<>();
+                        createHuffmantree(file);
+                    }
+                } catch (FileNotFoundException er){
+                    System.err.println("Sorry, couldn't any files inside that folder...");
+                }
+            }
+        } catch (NullPointerException e){
+            System.err.println("Sorry, couldn't find that folder...");
+        }
+    }
+
+    public void createHuffmantree(File file) throws IOException{
+        // READ FILE
+        fileScanner = new Scanner(file);
+
+        message = "";
+
+        while (fileScanner.hasNextLine()){
+            message += fileScanner.nextLine();
+            if(fileScanner.hasNextLine()){
+                message += "\r";
+            }
+        }
+
+        // CREATE HUFFMAN TREE
+        System.out.println("\n\nFile name: " + file.getName());
+        if(message != null) {
+            huffmanTree = new BuildTree(frequency, message);
+            root = huffmanTree.build();
+        } else {
+            System.err.println("You have not entered a message or a file yet, please try again later!");
+        }
     }
 
     /**
@@ -145,12 +187,10 @@ public class Main {
      */
     public void printMenu(){
         System.out.println("\n@@@@@@@@@@ Menu @@@@@@@@@@");
-        System.out.println( "1. Enter a message: \n" +
-                "2. Input a file \n" +
-                "3. Create Huffman Tree \n" +
-                "4. Print Table \n" +
-                "5. Print root node .toString \n" +
-                "6. Create a Huffman encoded file \n" +
+        System.out.println( "1. Compress single file: \n" +
+                "2. Compress all files in a folder: \n" +
+                "3. Print frequency table \n" +
+                "4. Print root node: \n" +
                 "Q. Quit");
     }
 
