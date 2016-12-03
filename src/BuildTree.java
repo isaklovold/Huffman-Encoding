@@ -9,12 +9,15 @@ public class BuildTree {
     private String message;
 
     private Map<Character, Integer> frequency;
-    private LinkedList<Node> huffmanTree;
-    private Queue<Node> huffmanTreeQue;
+    private LinkedList<Node> nodeLinkedList;
+    private PriorityQueue<Node> huffManTreeNodes;
     private ArrayList<Character> occurrences;
     private HashMap<Character, String> encodedCharacter;
 
     private Node leftChild, rightChild, root, current;
+
+    private float averageNodeHeight;
+    private int treeHeight;
 
     /**
      * Constructor that makes it possible to create an
@@ -38,8 +41,8 @@ public class BuildTree {
         root = null;
         current = null;
         occurrences = new ArrayList<>();
-        huffmanTree = new LinkedList<>();
-        huffmanTreeQue = new PriorityQueue<>(new Comparator<Node>() {
+        nodeLinkedList = new LinkedList<>();
+        huffManTreeNodes = new PriorityQueue<>(new Comparator<Node>() {
             @Override
             public int compare(Node o1, Node o2) {
                 return 0;
@@ -63,6 +66,7 @@ public class BuildTree {
         setNodes();
         pairNodes();
         printFrequencyTable();
+        setNodeHeight();
 
         return root;
     }
@@ -82,8 +86,8 @@ public class BuildTree {
             String kv = Character.toString(keyValue.charValue());
             int v = value.intValue();
             Node node = new Node(kv, v);
-            huffmanTree.add(node);
-            huffmanTreeQue.add(node);
+            nodeLinkedList.add(node);
+            huffManTreeNodes.add(node);
         }
     }
 
@@ -98,10 +102,11 @@ public class BuildTree {
      * 4. Repeats step 1-4 until there is only one node left
      */
     public void pairNodes() {
+
         do {
-            leftChild = huffmanTree.get(0);
+            leftChild = nodeLinkedList.get(0);
             leftChild.setIndex(0);
-            rightChild = huffmanTree.get(1);
+            rightChild = nodeLinkedList.get(1);
             rightChild.setIndex(1);
 
             String name = leftChild.getCharacter() + rightChild.getCharacter();
@@ -111,65 +116,91 @@ public class BuildTree {
             root.setLeftChild(leftChild);
             root.setRightChild(rightChild);
 
-            huffmanTreeQue.add(root);
+            huffManTreeNodes.add(root);
 
-            for (int i = 0; i < huffmanTree.size(); i++) {
-                if (huffmanTree.get(i).equals(leftChild)) {
-                    huffmanTree.remove(i);
+            for (int i = 0; i < nodeLinkedList.size(); i++) {
+                if (nodeLinkedList.get(i).equals(leftChild)) {
+                    nodeLinkedList.remove(i);
                 }
-                if (huffmanTree.get(i).equals(rightChild)) {
-                    huffmanTree.remove(i);
+                if (nodeLinkedList.get(i).equals(rightChild)) {
+                    nodeLinkedList.remove(i);
                 }
             }
 
-            huffmanTree.add(root);
+            nodeLinkedList.add(root);
 
             // THIS IS NOT MY CODE
-            Collections.sort(huffmanTree, new Comparator<Node>() {
+            Collections.sort(nodeLinkedList, new Comparator<Node>() {
                 @Override
                 public int compare(Node o1, Node o2) {
                     return Integer.compare(o1.getValue(), o2.getValue());
                 }
             });
 
-        } while (huffmanTree.size() > 2);
+        } while (nodeLinkedList.size() > 2);
 
+        pairLastNodes();
+
+        /*do{
+
+            if(huffManTreeNodes.size() > 1){
+                leftChild = huffManTreeNodes.poll();
+                rightChild = huffManTreeNodes.poll();
+
+                Node node = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+                node.setLeftChild(leftChild);
+                node.setRightChild(rightChild);
+                root = node;
+                huffManTreeNodes.add(root);
+
+            } else {
+                root = huffManTreeNodes.poll();
+            }
+        } while (huffManTreeNodes.size() > 0);
+*/
+
+    }
+
+    public void pairLastNodes(){
         // IF HUFFMANTREE ONLY HAS A SIZE OF 2
-        if(huffmanTree.size() == 2) {
-            leftChild = huffmanTree.get(0);
+        if(nodeLinkedList.size() == 2) {
+            leftChild = nodeLinkedList.get(0);
             leftChild.setIndex(0);
-            rightChild = huffmanTree.get(1);
+            rightChild = nodeLinkedList.get(1);
             rightChild.setIndex(1);
             Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
             n.setLeftChild(leftChild);
             n.setRightChild(rightChild);
             root = n;
-            huffmanTree.add(root);
+            nodeLinkedList.add(root);
 
-            for (int i = 0; i < huffmanTree.size(); i++) {
-                if (!huffmanTree.get(i).equals(n)) {
-                    huffmanTree.remove(i);
+            for (int i = 0; i < nodeLinkedList.size(); i++) {
+                if (!nodeLinkedList.get(i).equals(n)) {
+                    nodeLinkedList.remove(i);
                 } else {
                     //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
                 }
             }
+            nodeLinkedList.clear();
             // ELSE IS IF HUFFMANTREE ONLY HAS A SIZE OF 1
         } else {
-            System.out.println("HuffmanTree: " + huffmanTree.toString());
-            System.out.println("HuffmanTreeQue: " + huffmanTreeQue.toString());
-            leftChild = huffmanTree.get(0);
+            System.out.println("HuffmanTree: " + nodeLinkedList.toString());
+            System.out.println("HuffmanTreeQue: " + huffManTreeNodes.toString());
+            leftChild = nodeLinkedList.get(0);
             rightChild = root;
             Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
             root = n;
-            huffmanTree.add(root);
+            nodeLinkedList.add(root);
 
-            for (int i = 0; i < huffmanTree.size(); i++) {
-                if (!huffmanTree.get(i).equals(n)) {
-                    huffmanTree.remove(i);
+            for (int i = 0; i < nodeLinkedList.size(); i++) {
+                if (!nodeLinkedList.get(i).equals(n)) {
+                    nodeLinkedList.remove(i);
                 } else {
                     //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
                 }
             }
+
+            nodeLinkedList.clear();
         }
     }
 
@@ -299,4 +330,38 @@ public class BuildTree {
         return encodedCharacter;
     }
 
+    public void setNodeHeight(){
+        int count;
+        int totalCount = 0;
+        int numberOfNodes = 0;
+        treeHeight = 0;
+
+        Iterator iterator = encodedCharacter.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry mentry = (Map.Entry) iterator.next();
+            count = ((String) mentry.getValue()).toCharArray().length;
+            for(Node n: huffManTreeNodes)
+            {
+                if(n.getCharacter().equals(mentry.getKey().toString())){
+                    n.setDepth(count);
+                    totalCount += count;
+                    numberOfNodes++;
+                    if(count > treeHeight){
+                        treeHeight = count;
+                    }
+                }
+            }
+        }
+
+        averageNodeHeight = (float) totalCount/numberOfNodes;
+
+    }
+
+    public float getAverageHeight(){
+        return averageNodeHeight;
+    }
+
+    public int getTreeHeight(){
+        return treeHeight;
+    }
 }

@@ -23,8 +23,8 @@ public class Main {
 
     private HashMap<Character, String> encodedCharacter;
 
-    private long uncompressed, compressed, compressionRatio;
-    private float ratio;
+    private long uncompressed, compressed;
+    private float compressionRatio;
 
 
     /**
@@ -98,6 +98,7 @@ public class Main {
             fileName = new File(in.next() + ".txt");
             createHuffmantree(fileName);
 
+
             // CREATE A COMPRESSED FILE
             compressFile();
 
@@ -121,7 +122,10 @@ public class Main {
                     if(!file.getName().equals(".DS_Store")) {
                         // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
                         frequency = new HashMap<>();
-                        createHuffmantree(file);
+                        fileName = file;
+                        createHuffmantree(fileName);
+
+                        compressFile();
 
                         // ADDS HUFFMANTREE AND ROOT NODE OF HUFFMANTREE TO A MAP
                         if(huffmanTreeMap != null && !huffmanTreeMap.containsKey(huffmanTree) && !huffmanTreeMap.containsValue(root)){
@@ -185,7 +189,7 @@ public class Main {
         System.out.println("\n@@@@@ File Compression @@@@@");
         encodedCharacter = huffmanTree.getEncodedCharacter();
         try{
-            File newFile = new File("encoded_" + fileName);
+            File newFile = new File("encoded_" + fileName.getName());
             PrintWriter write = new PrintWriter(newFile, "UTF-8");
             for(Character c: message.toCharArray())
             {
@@ -202,12 +206,9 @@ public class Main {
             write.close();
 
 
-            System.out.println(fileName.length() * 3);
-
-            uncompressed = (fileName.length()*3);
+            uncompressed = (fileName.length()*8);
             compressed = newFile.length();
-            ratio = (float) compressed/uncompressed;
-            compressionRatio = (long) (100-(ratio*100));
+            compressionRatio = (float) compressed/uncompressed;
 
 
             System.out.println("Encoded file created!");
@@ -215,7 +216,10 @@ public class Main {
             System.out.println("Compressed file name: " + newFile);
             System.out.println("Uncompressed file (bits): " + uncompressed);
             System.out.println("Compressed file (bits): " + compressed);
-            System.out.println("Compression ratio: " + compressionRatio + "%");
+            System.out.println("Compression ratio: " + compressionRatio);
+
+            System.out.println("\nHeight of tree: " + huffmanTree.getTreeHeight());
+            System.out.println("Average node height: " + huffmanTree.getAverageHeight());
 
 
         } catch (IOException e){
@@ -238,7 +242,7 @@ public class Main {
     }
 
     /**
-     * Main method
+     * Main method!
      * @param args
      * @throws IOException
      */
