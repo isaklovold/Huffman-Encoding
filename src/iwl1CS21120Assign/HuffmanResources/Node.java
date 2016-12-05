@@ -1,9 +1,11 @@
 package iwl1CS21120Assign.HuffmanResources;
 
+import java.util.Comparator;
+
 /**
  * Created by isaklovold on 22/11/2016.
  */
-public class Node {
+public class Node implements Comparable<Node> {
 
     private Node leftChild, rightChild;
     private String character;
@@ -123,6 +125,17 @@ public class Node {
         this.depth = depth;
     }
 
+    @Override
+    public int compareTo(Node n1) {
+        if(this.getValue() == n1.getValue()) {
+            return 0;
+        } else if(this.getValue() > n1.getValue()) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+
     /**
      * Prints out information about this iwl1CS21120Assign.HuffmanResources.Node object
      * @return, returns a message that contains information about this iwl1CS21120Assign.HuffmanResources.Node object
@@ -138,4 +151,5 @@ public class Node {
                 ", depth=" + depth +
                 '}';
     }
+
 }

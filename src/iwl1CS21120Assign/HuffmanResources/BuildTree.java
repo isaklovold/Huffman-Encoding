@@ -44,12 +44,7 @@ public class BuildTree {
         current = null;
         occurrences = new ArrayList<>();
         nodeLinkedList = new LinkedList<>();
-        huffManTreeNodes = new PriorityQueue<>(new Comparator<Node>() {
-            @Override
-            public int compare(Node o1, Node o2) {
-                return 0;
-            }
-        });
+        huffManTreeNodes = new PriorityQueue<Node>();
         encodedCharacter = new HashMap<>();
     }
 
@@ -104,7 +99,8 @@ public class BuildTree {
      * 4. Repeats step 1-4 until there is only one node left
      */
     public void pairNodes() {
-        do {
+
+        /*do {
             leftChild = nodeLinkedList.get(0);
             leftChild.setIndex(0);
             rightChild = nodeLinkedList.get(1);
@@ -161,16 +157,21 @@ public class BuildTree {
                 }
             }
             nodeLinkedList.clear();
-        }
+        }*/
 
-        /* THIS SECTION UNDER IS AN IMPLEMENTATION I WAS WORKING ON TO SHORTEN THEN CODE USED ABOVE, BUT NOT FULLY FUNCTIONAL
+         //THIS SECTION UNDER IS AN IMPLEMENTATION I WAS WORKING ON TO SHORTEN THEN CODE USED ABOVE, BUT NOT FULLY FUNCTIONAL
+
         do{
 
             if(huffManTreeNodes.size() > 1){
+
                 leftChild = huffManTreeNodes.poll();
                 rightChild = huffManTreeNodes.poll();
 
-                iwl1CS21120Assign.HuffmanResources.Node node = new iwl1CS21120Assign.HuffmanResources.Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+                System.out.println(leftChild.getValue());
+                System.out.println(rightChild.getValue());
+
+                Node node = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
                 node.setLeftChild(leftChild);
                 node.setRightChild(rightChild);
                 root = node;
@@ -181,15 +182,6 @@ public class BuildTree {
             }
             nodeLinkedList.add(root);
         } while (huffManTreeNodes.size() > 0);
-
-        // THIS IS NOT MY CODE
-        Collections.sort(nodeLinkedList, new Comparator<iwl1CS21120Assign.HuffmanResources.Node>() {
-            @Override
-            public int compare(iwl1CS21120Assign.HuffmanResources.Node o1, iwl1CS21120Assign.HuffmanResources.Node o2) {
-                return Integer.compare(o1.getValue(), o2.getValue());
-            }
-        });
-        */
 
     }
 
