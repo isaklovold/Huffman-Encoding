@@ -10,16 +10,19 @@ public class BuildTree {
 
     private String message;
 
+    private ArrayList<Character> occurrences;
     private Map<Character, Integer> frequency;
     private LinkedList<Node> nodeLinkedList;
     private PriorityQueue<Node> huffManTreeNodes;
-    private ArrayList<Character> occurrences;
+
     private HashMap<Character, String> encodedCharacter;
 
     private Node leftChild, rightChild, root, current;
+    private String nodeName;
+    private int nodeValue;
 
     private float averageNodeHeight;
-    private int treeHeight;
+    private int treeHeight, numberOfNodes;
 
     /**
      * Constructor that makes it possible to create an
@@ -30,7 +33,7 @@ public class BuildTree {
     }
 
     /**
-     * Constructor that initialize this object of iwl1CS21120Assign.HuffmanResources.BuildTree
+     * Constructor that initialize this object of BuildTree
      * @param frequency
      * @param msg
      */
@@ -49,12 +52,13 @@ public class BuildTree {
     }
 
     /**
-     * iwl1CS21120Assign.Application.iwl1CS21120Assign method that calls all classes in right order to create a Huffman Tree
+     * Main method that calls all classes in right order to create a Huffman Tree
      * 1. Gets the frequency of the all characters in the map
      * 2. Sorts all characters in the map after value
      * 3. Sets all characters with their value to a node and adds them to a LinkedList
      * 4. Building the Huffman Tree by pairing nodes until there is only one node left
-     * 5. Prints
+     * 5. Prints out the frequency table to the console
+     * 6. Creating information about the tree, node height, average node height etc...
      * @return, returns the root node of Huffman Tree
      */
     public Node build() {
@@ -63,7 +67,7 @@ public class BuildTree {
         setNodes();
         pairNodes();
         printFrequencyTable();
-        setNodeHeight();
+        getTreeInformation();
 
         return root;
     }
@@ -80,154 +84,51 @@ public class BuildTree {
             Map.Entry mentry = (Map.Entry) iterator.next();
             Character keyValue = (Character) mentry.getKey();
             Integer value = (Integer) mentry.getValue();
-            String kv = Character.toString(keyValue.charValue());
-            int v = value.intValue();
-            Node node = new Node(kv, v);
+            nodeName = Character.toString(keyValue.charValue());
+            nodeValue = value.intValue();
+            Node node = new Node(nodeName, nodeValue);
+            node.setName(nodeName);
             nodeLinkedList.add(node);
             huffManTreeNodes.add(node);
+            numberOfNodes++;
         }
     }
 
     /**
      * 1. Pairs the two nodes with lowest value.
-     * 2. Creates a new iwl1CS21120Assign.HuffmanResources.Node of the combined name and value.
+     * 2. Creates a new Node of the combined name and value.
      * 3. Sets the first node to be the left child and the second
-     * to be the right child of the new node that is the root node.
-     * 4. Adds root node to LinkedList and to PriorityQue before it
-     *    deletes child nodes in the LinkedList.
+     *    to be the right child of the new node that is the root node.
+     * 4. Adds root node to LinkedList and to PriorityQue.
      *
-     * 4. Repeats step 1-4 until there is only one node left
+     * 4. Repeats step 1-4 until there is only one node left and sets
+     *    root node to this node.
      */
     public void pairNodes() {
-
-        /*do {
-            leftChild = nodeLinkedList.get(0);
-            leftChild.setIndex(0);
-            rightChild = nodeLinkedList.get(1);
-            rightChild.setIndex(1);
-
-            String name = leftChild.getCharacter() + rightChild.getCharacter();
-            Integer value = leftChild.getValue() + rightChild.getValue();
-
-            root = new Node(name, value);
-            root.setLeftChild(leftChild);
-            root.setRightChild(rightChild);
-
-            huffManTreeNodes.add(root);
-
-            for (int i = 0; i < nodeLinkedList.size(); i++) {
-                if (nodeLinkedList.get(i).equals(leftChild)) {
-                    nodeLinkedList.remove(i);
-                }
-                if (nodeLinkedList.get(i).equals(rightChild)) {
-                    nodeLinkedList.remove(i);
-                }
-            }
-
-            nodeLinkedList.add(root);
-
-            // THIS IS NOT MY CODE
-            Collections.sort(nodeLinkedList, new Comparator<Node>() {
-                @Override
-                public int compare(Node o1, Node o2) {
-                    return Integer.compare(o1.getValue(), o2.getValue());
-                }
-            });
-
-        } while (nodeLinkedList.size() > 1);
-
-        //pairLastNodes();
-
-        if(nodeLinkedList.size() == 2) {
-            leftChild = nodeLinkedList.get(0);
-            leftChild.setIndex(0);
-            rightChild = nodeLinkedList.get(1);
-            rightChild.setIndex(1);
-            Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
-            n.setLeftChild(leftChild);
-            n.setRightChild(rightChild);
-            root = n;
-            nodeLinkedList.add(root);
-
-            for (int i = 0; i < nodeLinkedList.size(); i++) {
-                if (!nodeLinkedList.get(i).equals(n)) {
-                    nodeLinkedList.remove(i);
-                } else {
-                    //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
-                }
-            }
-            nodeLinkedList.clear();
-        }*/
-
-         //THIS SECTION UNDER IS AN IMPLEMENTATION I WAS WORKING ON TO SHORTEN THEN CODE USED ABOVE, BUT NOT FULLY FUNCTIONAL
-
         do{
-
             if(huffManTreeNodes.size() > 1){
-
                 leftChild = huffManTreeNodes.poll();
                 rightChild = huffManTreeNodes.poll();
+                nodeName = leftChild.getName() + rightChild.getName();
+                nodeValue = leftChild.getValue() + rightChild.getValue();
 
-                System.out.println(leftChild.getValue());
-                System.out.println(rightChild.getValue());
-
-                Node node = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+                Node node = new Node(nodeName, nodeValue);
                 node.setLeftChild(leftChild);
                 node.setRightChild(rightChild);
+                node.setName(nodeName);
                 root = node;
                 huffManTreeNodes.add(root);
+                nodeLinkedList.add(root);
+                numberOfNodes++;
 
             } else {
                 root = huffManTreeNodes.poll();
             }
-            nodeLinkedList.add(root);
         } while (huffManTreeNodes.size() > 0);
 
-    }
 
 
-    public void pairLastNodes(){
-        /*
-        // IF HUFFMANTREE ONLY HAS A SIZE OF 2
-        if(nodeLinkedList.size() == 2) {
-            leftChild = nodeLinkedList.get(0);
-            leftChild.setIndex(0);
-            rightChild = nodeLinkedList.get(1);
-            rightChild.setIndex(1);
-            Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
-            n.setLeftChild(leftChild);
-            n.setRightChild(rightChild);
-            root = n;
-            nodeLinkedList.add(root);
 
-            for (int i = 0; i < nodeLinkedList.size(); i++) {
-                if (!nodeLinkedList.get(i).equals(n)) {
-                    nodeLinkedList.remove(i);
-                } else {
-                    //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
-                }
-            }
-            nodeLinkedList.clear();
-            // ELSE IS IF HUFFMANTREE ONLY HAS A SIZE OF 1
-        } else {
-            System.out.println("HuffmanTree: " + nodeLinkedList.toString());
-            System.out.println("HuffmanTreeQue: " + huffManTreeNodes.toString());
-            leftChild = nodeLinkedList.get(0);
-            rightChild = root;
-            Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
-            root = n;
-            nodeLinkedList.add(root);
-
-            for (int i = 0; i < nodeLinkedList.size(); i++) {
-                if (!nodeLinkedList.get(i).equals(n)) {
-                    nodeLinkedList.remove(i);
-                } else {
-                    //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
-                }
-            }
-
-            nodeLinkedList.clear();
-        }*/
     }
 
     /**
@@ -312,7 +213,9 @@ public class BuildTree {
     }
 
     /**
-     * Finding the encoding for symbol c
+     * Finding the binary encoding for symbol c by setting
+     * nodes depth to be 0 if it's to the left and 1 if
+     * it's to the right in the tree.
      * @param c, symbol that needs to be encoded
      * @return, returns string that represents symbol c
      */
@@ -320,30 +223,30 @@ public class BuildTree {
         String encoding = "";
         boolean found = false;
         current = root;
-        do{
-            if(!current.getCharacter().equals(c)) {
-                if (current.getCharacter().contains(c)) {
-                    do {
-                        if (!current.getCharacter().equals(c)) {
-                            if (current.getLeftChild().getCharacter().contains(c)) {
-                                current = current.getLeftChild();
-                                encoding += "0";
-                            } else {
-                                current = current.getRightChild();
-                                encoding += "1";
-                            }
-                        } else {
-                            found = true;
-                        }
+        int depthCount = 0;
 
-                    } while (!found);
+        if(!current.getName().equals(c) && current.getName().contains(c)) {
+            do {
+                if (!current.getName().equals(c)) {
+                    if (current.getLeftChild().getName().contains(c)) {
+                        depthCount++;
+                        current = current.getLeftChild();
+                        current.setIndex(0);
+                        encoding += current.getIndex();
+                        current.setDepth(depthCount);
+
+                    } else {
+                        depthCount++;
+                        current = current.getRightChild();
+                        current.setIndex(1);
+                        encoding += current.getIndex();
+                        current.setDepth(depthCount);
+                    }
                 } else {
                     found = true;
                 }
-            } else {
-                found = true;
-            }
-        } while (!found);
+            } while (!found);
+        }
 
         return encoding;
     }
@@ -356,38 +259,46 @@ public class BuildTree {
         return encodedCharacter;
     }
 
-    public void setNodeHeight(){
-        int count;
-        int totalCount = 0;
-        int numberOfNodes = 0;
+    /**
+     * This method finds the height of the tree and calculates
+     * the average node height of the tree.
+     */
+    public void getTreeInformation(){
         treeHeight = 0;
+        int totalDepth = 0;
 
-        Iterator iterator = encodedCharacter.entrySet().iterator();
-        while(iterator.hasNext()){
-            Map.Entry mentry = (Map.Entry) iterator.next();
-            count = ((String) mentry.getValue()).toCharArray().length;
-            for(Node n: huffManTreeNodes)
+        for(Node n: nodeLinkedList)
+        {
+            if(n.getDepth() > treeHeight)
             {
-                if(n.getCharacter().equals(mentry.getKey().toString())){
-                    n.setDepth(count);
-                    totalCount += count;
-                    numberOfNodes++;
-                    if(count > treeHeight){
-                        treeHeight = count;
-                    }
-                    System.out.println(n.getDepth());
-                }
+                treeHeight = n.getDepth();
             }
+            System.out.println(n.getDepth());
+            totalDepth += n.getDepth();
         }
-
-        averageNodeHeight = (float) totalCount/numberOfNodes;
-
+        averageNodeHeight = (float) totalDepth/numberOfNodes;
     }
 
+    /**
+     *
+     * @return number of nodes in the tree.
+     */
+    public int getNumberOfNodes(){
+        return numberOfNodes;
+    }
+
+    /**
+     *
+     * @return average node height in the tree.
+     */
     public float getAverageHeight(){
         return averageNodeHeight;
     }
 
+    /**
+     *
+     * @return height of the tree.
+     */
     public int getTreeHeight(){
         return treeHeight;
     }

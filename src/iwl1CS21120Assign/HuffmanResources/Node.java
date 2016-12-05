@@ -1,19 +1,17 @@
 package iwl1CS21120Assign.HuffmanResources;
 
-import java.util.Comparator;
-
 /**
  * Created by isaklovold on 22/11/2016.
  */
 public class Node implements Comparable<Node> {
 
     private Node leftChild, rightChild;
-    private String character;
+    private String name;
     private int value, index, depth;
 
     /**
      * Constructor that makes it possible to create an
-     * object of iwl1CS21120Assign.HuffmanResources.Node without passing any information
+     * object of Node without passing any information.
      */
     public Node(){
         leftChild = null;
@@ -24,25 +22,24 @@ public class Node implements Comparable<Node> {
     }
 
     /**
-     * Constructor that initialises this object of iwl1CS21120Assign.HuffmanResources.Node
-     * @param character
+     * Constructor that initialises this object of Node.
+     * @param name
      * @param value
      */
-    public Node(String character, Integer value){
-        this.character = character;
+    public Node(String name, Integer value){
+        this.name = name;
         this.value = value;
     }
 
     /**
-     * Gets left child of this iwl1CS21120Assign.HuffmanResources.Node object
-     * @return, returns left child of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return returns left child of this Node object.
      */
     public Node getLeftChild() {
         return leftChild;
     }
 
     /**
-     * Sets left child of this iwl1CS21120Assign.HuffmanResources.Node object
+     * Sets left child of this Node object.
      * @param leftChild
      */
     public void setLeftChild(Node leftChild) {
@@ -50,15 +47,14 @@ public class Node implements Comparable<Node> {
     }
 
     /**
-     * Gets right child of this iwl1CS21120Assign.HuffmanResources.Node object
-     * @return, returns right child of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return returns right child of this Node object.
      */
     public Node getRightChild() {
         return rightChild;
     }
 
     /**
-     * Sets right child of this iwl1CS21120Assign.HuffmanResources.Node object
+     * Sets right child of this Node object.
      * @param rightChild
      */
     public void setRightChild(Node rightChild) {
@@ -66,65 +62,64 @@ public class Node implements Comparable<Node> {
     }
 
     /**
-     * Gets the name of this iwl1CS21120Assign.HuffmanResources.Node object
-     * @return, returns the name of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return returns the name of this Node object.
      */
-    public String getCharacter() {
-        return character;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the name of this iwl1CS21120Assign.HuffmanResources.Node object
-     * @param character
+     * Sets the name of this Node object.
+     * @param name
      */
-    public void setCharacter(String character) {
-        this.character = character;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
-     * Gets the value of this iwl1CS21120Assign.HuffmanResources.Node object
-     * @return, returns the value of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return returns the value of this Node object.
      */
     public int getValue() {
         return value;
     }
 
     /**
-     * Sets the value of this iwl1CS21120Assign.HuffmanResources.Node object
-     * @param value
-     */
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    /**
-     *
-     * @return
+     * @return index of which depth this node has in the tree.
      */
     public int getIndex() {
         return index;
     }
 
+    /**
+     * Sets the index of the its position in the tree,
+     * left = 0 and right = 1.
+     * @param index
+     */
     public void setIndex(int index) {
         this.index = index;
     }
 
     /**
-     * Gets the depth value that this iwl1CS21120Assign.HuffmanResources.Node object has in the Huffman Tree
-     * @return, returns the depth value that this iwl1CS21120Assign.HuffmanResources.Node object has in the Huffman Tree
+     * @return returns the depth value that this Node object has in the Huffman Tree.
      */
     public int getDepth() {
         return depth;
     }
 
     /**
-     * Sets the depth value that this iwl1CS21120Assign.HuffmanResources.Node object has in the Huffman Tree
+     * Sets the depth value that this Node object has in the Huffman Tree.
      * @param depth
      */
     public void setDepth(int depth) {
         this.depth = depth;
     }
 
+    /**
+     * An abstract method of the implemented Comparable class
+     * which compare nodes in an increasing order by the nodes value.
+     * @param n1
+     * @return value that determines which node has the lowest value.
+     */
     @Override
     public int compareTo(Node n1) {
         if(this.getValue() == n1.getValue()) {
@@ -137,15 +132,14 @@ public class Node implements Comparable<Node> {
     }
 
     /**
-     * Prints out information about this iwl1CS21120Assign.HuffmanResources.Node object
-     * @return, returns a message that contains information about this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return a message that contains information about this Node object.
      */
     @Override
     public String toString() {
-        return "iwl1CS21120Assign.HuffmanResources.Node{" +
+        return "Node{" +
                 "leftChild=" + leftChild +
                 ", rightChild=" + rightChild +
-                ", character='" + character + '\'' +
+                ", name='" + name + '\'' +
                 ", value=" + value +
                 ", index=" + index +
                 ", depth=" + depth +

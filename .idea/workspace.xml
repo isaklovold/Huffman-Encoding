@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045041ac-e300-43e5-9ba1-fefd9783456a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HuffmanEncoding/NewMain.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HuffmanEncoding/Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HuffmanEncoding/Pair.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HuffmanEncoding/ReadFile.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java" />
     </list>
     <ignored path="HuffmanEncoding.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,25 +32,27 @@
       <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="119">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iwl1CS21120Assign.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="iwl1CS21120Assign.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="181" column="39" selection-start-line="181" selection-start-column="39" selection-end-line="181" selection-end-column="39" />
+            <state relative-caret-position="212">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+                <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+                <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
@@ -60,15 +61,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/NewMain.java">
+      <file leaf-file-name="BuildTree.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="442">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
-                <element signature="method#NewMain#0;class#NewMain#0" expanded="false" />
-                <element signature="method#runApp#0;class#NewMain#0" expanded="false" />
-                <element signature="method#printMenu#0;class#NewMain#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
+                <element signature="method#build#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
+                <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,51 +86,28 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+            <state relative-caret-position="221">
+              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
               <folding>
                 <element signature="method#Node#0;class#Node#0" expanded="false" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#859#860#0" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
+                <element signature="e#1033#1034#0" expanded="true" />
+                <element signature="e#1140#1141#0" expanded="true" />
+                <element signature="e#1173#1174#0" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+                <element signature="e#1353#1354#0" expanded="true" />
+                <element signature="e#1453#1454#0" expanded="true" />
+                <element signature="e#1480#1481#0" expanded="true" />
+                <element signature="e#1597#1598#0" expanded="true" />
+                <element signature="e#1629#1630#0" expanded="true" />
+                <element signature="e#1728#1729#0" expanded="true" />
+                <element signature="e#1756#1757#0" expanded="true" />
+                <element signature="e#1864#1865#0" expanded="true" />
+                <element signature="e#1892#1893#0" expanded="true" />
                 <element signature="method#toString#0;class#Node#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pair.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/Pair.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildTree.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="321" column="7" selection-start-line="321" selection-start-column="7" selection-end-line="321" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-                <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#pairLastNodes#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -170,8 +156,9 @@
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/iwl1CS21120Assign/Test/test.java" />
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/Test/test.java" />
-        <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
+        <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java" />
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" />
+        <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
       </list>
     </option>
   </component>
@@ -183,10 +170,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="27" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -199,7 +186,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -212,14 +199,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
@@ -574,11 +554,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480951141389</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated the way the tree gets build and shortened the code">
+      <created>1480953578026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480953578026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="27" width="1280" height="773" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -588,13 +575,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3731501" sideWeight="0.5072917" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7713068" sideWeight="0.49270833" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47251585" sideWeight="0.49270833" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252841" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3245243" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -626,12 +613,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7713068" sideWeight="0.49270833" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47251585" sideWeight="0.49270833" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252841" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3245243" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -666,11 +653,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Compressed file size fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compressed file size fixed" />
+    <MESSAGE value="Updated the way the tree gets build and shortened the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the way the tree gets build and shortened the code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="82" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -679,6 +667,109 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="181" column="39" selection-start-line="181" selection-start-column="39" selection-end-line="181" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/NewMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="method#NewMain#0;class#NewMain#0" expanded="false" />
+            <element signature="method#runApp#0;class#NewMain#0" expanded="false" />
+            <element signature="method#printMenu#0;class#NewMain#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="method#Node#0;class#Node#0" expanded="false" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
+            <element signature="method#toString#0;class#Node#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
+            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/ReadFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -694,10 +785,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
@@ -713,11 +806,14 @@
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
             <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
+            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#pairLastNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,10 +841,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
@@ -764,11 +862,14 @@
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
             <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
+            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#pairLastNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,10 +889,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
@@ -807,11 +910,14 @@
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
             <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
+            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#pairLastNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -823,10 +929,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
@@ -852,6 +960,22 @@
           <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
           <folding>
             <element signature="method#Node#0;class#Node#0" expanded="false" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
             <element signature="method#toString#0;class#Node#0" expanded="false" />
           </folding>
         </state>
@@ -864,10 +988,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
@@ -881,6 +1007,22 @@
           <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
           <folding>
             <element signature="method#Node#0;class#Node#0" expanded="false" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
             <element signature="method#toString#0;class#Node#0" expanded="false" />
           </folding>
         </state>
@@ -905,7 +1047,7 @@
     <entry file="file://$PROJECT_DIR$/Resources/encoded_randomBiased30000.txt" />
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/Pair.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
@@ -913,41 +1055,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="374">
           <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/ReadFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="181" column="39" selection-start-line="181" selection-start-column="39" selection-end-line="181" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/NewMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="method#NewMain#0;class#NewMain#0" expanded="false" />
@@ -957,30 +1073,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Test/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="221">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
           <folding>
             <element signature="method#Node#0;class#Node#0" expanded="false" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
             <element signature="method#toString#0;class#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/io/IOException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="321" column="7" selection-start-line="321" selection-start-column="7" selection-end-line="321" selection-end-column="7" />
+        <state relative-caret-position="442">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
             <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
+            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#pairLastNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
+            <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
+            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -33,7 +33,7 @@ public class iwl1CS21120Assign {
 
 
     /**
-     * Constructor that initialize instance variables
+     * Constructor that initialize instance variables.
      */
     public iwl1CS21120Assign() {
         in = new Scanner(System.in);
@@ -45,12 +45,15 @@ public class iwl1CS21120Assign {
     }
 
     /**
-     * iwl1CS21120Assign.Application.iwl1CS21120Assign method that runs the program cycle
-     * Case "1": reads file, create huffman tree and create a compressed file of the selected file
-     * Case "2": prints out the frequency table
-     * Case "3": prints out information about the root note in huffman tree
-     * case "Q": exits the program
-     * @throws IOException, for user input
+     * Main method that runs the program cycle
+     * Case "1": reads a single file, create Huffman tree and create a compressed file of the selected file.
+     * Case "2": reads in every file in a given directory, create Huffman tree and create a compressed file of them all.
+     * Case "3": prints out the frequency table of the last created Huffman tree.
+     * Case "4": prints out the frequency table of all Huffman tree's created.
+     * Case "5": prints out information about the root node of last created Huffman tree.
+     * Case "6": prints out information about the root node of all created Huffman trees.
+     * case "Q": exits the program.
+     * @throws IOException, by failed or interrupted I/O operations.
      */
     public void runApp() throws IOException {
         String input;
@@ -93,6 +96,11 @@ public class iwl1CS21120Assign {
         } while(!input.equals("Q"));
     }
 
+    /**
+     * Reads in a file, creating a Huffman tree and compresses the file.
+     * Adds the Huffman tree and its root node to a map that stores them all.
+     * @throws IOException, by failed or interrupted I/O operations.
+     */
     public void optionOne() throws IOException{
         try {
             // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
@@ -114,6 +122,11 @@ public class iwl1CS21120Assign {
         }
     }
 
+    /**
+     * Reads in every file in a given directory, creates a Huffman tree for each file and compresses them.
+     * Adds all Huffman trees and their root node to a map that stores them all.
+     * @throws IOException, by failed or interrupted I/O operations.
+     */
     public void optionTwo() throws IOException {
         try{
             // CHOOSE FOLDER WITH MULTIPLE FILES TO COMPRESS
@@ -144,6 +157,9 @@ public class iwl1CS21120Assign {
         }
     }
 
+    /**
+     * Prints out frequency table of the last created Huffman tree.
+     */
     public void optionThree(){
         // PRINT FREQUENCY TABLE
         if(huffmanTree != null) {
@@ -153,6 +169,9 @@ public class iwl1CS21120Assign {
         }
     }
 
+    /**
+     * Prints out frequency table for all created Huffman trees.
+     */
     public void optionFour(){
         if(huffmanTreeMap != null){
             for(BuildTree bt: huffmanTreeMap.keySet())
@@ -162,6 +181,12 @@ public class iwl1CS21120Assign {
         }
     }
 
+    /**
+     *  Writes all text from file to string which gets passed to the BuildTree object.
+     *  Calls the build() method on the BuildTree object to create the Huffman tree.
+     * @param file, takes in given file.
+     * @throws IOException, by failed or interrupted I/O operations.
+     */
     public void createHuffmantree(File file) throws IOException{
         // READ FILE
         fileScanner = new Scanner(file);
@@ -186,7 +211,7 @@ public class iwl1CS21120Assign {
     }
 
     /**
-     * Creates a compressed version of a selected file
+     * Creates a compressed version of a selected file.
      */
     public void compressFile(){
         System.out.println("\n@@@@@ File Compression @@@@@");
@@ -220,6 +245,7 @@ public class iwl1CS21120Assign {
             System.out.println("Compression ratio: " + compressionRatio);
 
             System.out.println("\nHeight of tree: " + huffmanTree.getTreeHeight());
+            System.out.println("Number of nodes: " + huffmanTree.getNumberOfNodes());
             System.out.println("Average node height: " + huffmanTree.getAverageHeight());
 
 
@@ -228,12 +254,17 @@ public class iwl1CS21120Assign {
         }
     }
 
+    /**
+     *
+     * @param c, unique character.
+     * @return the number of bits needed to represent the unique characters.
+     */
     public int getUncompressedFileSize(int c){
         return (int) (Math.log(c)/Math.log(2))+1;
     }
 
     /**
-     * Prints out menu options
+     * Prints out menu options.
      */
     public void printMenu(){
         System.out.println("\n@@@@@@@@@@ Menu @@@@@@@@@@");
@@ -247,9 +278,9 @@ public class iwl1CS21120Assign {
     }
 
     /**
-     * iwl1CS21120Assign.Application.iwl1CS21120Assign method!
+     * Main method.
      * @param args
-     * @throws IOException
+     * @throws IOException, by failed or interrupted I/O operations for the methods that is called.
      */
     public static void main(String[] args) throws IOException {
         iwl1CS21120Assign app = new iwl1CS21120Assign();
