@@ -273,7 +273,6 @@ public class BuildTree {
             {
                 treeHeight = n.getDepth();
             }
-            System.out.println(n.getDepth());
             totalDepth += n.getDepth();
         }
         averageNodeHeight = (float) totalDepth/numberOfNodes;

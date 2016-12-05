@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java" />
     </list>
     <ignored path="HuffmanEncoding.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,20 +41,15 @@
       <file leaf-file-name="iwl1CS21120Assign.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="465">
+              <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-                <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-                <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-                <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
                 <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-                <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-                <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,20 +58,28 @@
       <file leaf-file-name="BuildTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="1441">
+              <caret line="265" column="36" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-                <element signature="method#build#0;class#BuildTree#0" expanded="false" />
                 <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
                 <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-                <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
                 <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
                 <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
                 <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/String.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="622" column="0" selection-start-line="622" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
+              <folding>
+                <element signature="e#22821#22822#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/iwl1CS21120Assign/Test/test.java" />
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/Test/test.java" />
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/Node.java" />
-        <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" />
         <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
+        <option value="$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java" />
       </list>
     </option>
   </component>
@@ -561,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480953578026</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated the way nodes gets paired, java doc and node depth.">
+      <created>1480961779331</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480961779331</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -654,11 +663,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Compressed file size fixed" />
     <MESSAGE value="Updated the way the tree gets build and shortened the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the way the tree gets build and shortened the code" />
+    <MESSAGE value="Updated the way nodes gets paired, java doc and node depth." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the way nodes gets paired, java doc and node depth." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="82" />
+      <option name="time" value="85" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -682,15 +692,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -749,12 +754,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
             <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
@@ -785,15 +786,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -805,12 +801,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
             <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
@@ -841,15 +833,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -861,12 +848,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
             <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
@@ -889,15 +872,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,12 +887,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
             <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
@@ -929,15 +903,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -988,15 +957,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1116,19 +1080,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="622" column="0" selection-start-line="622" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
+          <folding>
+            <element signature="e#22821#22822#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/HuffmanResources/BuildTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="1441">
+          <caret line="265" column="36" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildTree#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#BuildTree#1;class#BuildTree#0" expanded="false" />
-            <element signature="method#build#0;class#BuildTree#0" expanded="false" />
             <element signature="method#setNodes#0;class#BuildTree#0" expanded="false" />
             <element signature="method#pairNodes#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#getFrequency#0;class#BuildTree#0" expanded="false" />
-            <element signature="method#sortMap#0;class#BuildTree#0" expanded="false" />
             <element signature="method#printFrequencyTable#0;class#BuildTree#0" expanded="false" />
             <element signature="method#characterEncoding#0;class#BuildTree#0" expanded="false" />
             <element signature="method#getTreeInformation#0;class#BuildTree#0" expanded="false" />
@@ -1138,20 +1108,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        <state relative-caret-position="465">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iwl1CS21120Assign#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#runApp#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#optionOne#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionTwo#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionThree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#optionFour#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#createHuffmantree#0;class#iwl1CS21120Assign#0" expanded="false" />
             <element signature="method#compressFile#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#printMenu#0;class#iwl1CS21120Assign#0" expanded="false" />
-            <element signature="method#main#0;class#iwl1CS21120Assign#0" expanded="false" />
           </folding>
         </state>
       </provider>
