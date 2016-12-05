@@ -1,7 +1,6 @@
 package iwl1CS21120Assign.Application;
 
-import iwl1CS21120Assign.HuffmanResources.BuildTree;
-import iwl1CS21120Assign.HuffmanResources.Node;
+import iwl1CS21120Assign.HuffmanResources.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;

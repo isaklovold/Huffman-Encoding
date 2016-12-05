@@ -90,7 +90,6 @@ public class BuildTree {
             node.setName(nodeName);
             nodeLinkedList.add(node);
             huffManTreeNodes.add(node);
-            numberOfNodes++;
         }
     }
 
@@ -119,16 +118,11 @@ public class BuildTree {
                 root = node;
                 huffManTreeNodes.add(root);
                 nodeLinkedList.add(root);
-                numberOfNodes++;
 
             } else {
                 root = huffManTreeNodes.poll();
             }
         } while (huffManTreeNodes.size() > 0);
-
-
-
-
     }
 
     /**
@@ -162,11 +156,10 @@ public class BuildTree {
     }
 
     /**
-     *
+     * Footnote: 1
      * THIS METHOD IS NOT MINE AND IS GOTTEN ONLINE
      * LINK TO DESTINATION OF METHOD DATED: 21.11.2016:
      * http://stackoverflow.com/questions/109383/sort-a-mapkey-value-by-values-java
-     *
      *
      * Sorting the map in an increasing order, if you remove the comment
      * inside compareByValue(Collections.reverseOrder()),
@@ -274,6 +267,7 @@ public class BuildTree {
                 treeHeight = n.getDepth();
             }
             totalDepth += n.getDepth();
+            numberOfNodes++;
         }
         averageNodeHeight = (float) totalDepth/numberOfNodes;
     }
