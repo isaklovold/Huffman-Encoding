@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045041ac-e300-43e5-9ba1-fefd9783456a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/JUnit/JUnitTestSuite.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Test/NewMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Test/Pair.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Test/ReadFile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Test/test.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HuffmanEncoding.iml" afterPath="$PROJECT_DIR$/HuffmanEncoding.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" afterPath="$PROJECT_DIR$/src/iwl1CS21120Assign/Application/iwl1CS21120Assign.java" />
     </list>
     <ignored path="HuffmanEncoding.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -738,7 +730,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480972071016</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added JUnit and a JUnit test class under JUnit package">
+      <created>1480979285301</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480979285301</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -833,7 +832,8 @@
     <MESSAGE value="Updated the way the tree gets build and shortened the code" />
     <MESSAGE value="Updated the way nodes gets paired, java doc and node depth." />
     <MESSAGE value="Small updates on JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small updates on JavaDoc" />
+    <MESSAGE value="Added JUnit and a JUnit test class under JUnit package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JUnit and a JUnit test class under JUnit package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
