@@ -56,8 +56,8 @@ public class iwl1CS21120Assign {
      */
     public void runApp() throws IOException {
         String input;
-        printMenu();
         do{
+            printMenu();
             input = in.nextLine().toUpperCase();
             switch (input){
                 case "1":
