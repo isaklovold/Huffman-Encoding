@@ -1,3 +1,8 @@
+package iwl1CS21120Assign.Test;
+
+import iwl1CS21120Assign.HuffmanResources.BuildTree;
+import iwl1CS21120Assign.HuffmanResources.Node;
+
 import java.util.*;
 
 /**

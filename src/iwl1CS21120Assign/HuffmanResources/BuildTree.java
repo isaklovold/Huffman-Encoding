@@ -1,3 +1,5 @@
+package iwl1CS21120Assign.HuffmanResources;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -28,7 +30,7 @@ public class BuildTree {
     }
 
     /**
-     * Constructor that initialize this object of BuildTree
+     * Constructor that initialize this object of iwl1CS21120Assign.HuffmanResources.BuildTree
      * @param frequency
      * @param msg
      */
@@ -52,7 +54,7 @@ public class BuildTree {
     }
 
     /**
-     * Main method that calls all classes in right order to create a Huffman Tree
+     * iwl1CS21120Assign.Application.iwl1CS21120Assign method that calls all classes in right order to create a Huffman Tree
      * 1. Gets the frequency of the all characters in the map
      * 2. Sorts all characters in the map after value
      * 3. Sets all characters with their value to a node and adds them to a LinkedList
@@ -93,7 +95,7 @@ public class BuildTree {
 
     /**
      * 1. Pairs the two nodes with lowest value.
-     * 2. Creates a new Node of the combined name and value.
+     * 2. Creates a new iwl1CS21120Assign.HuffmanResources.Node of the combined name and value.
      * 3. Sets the first node to be the left child and the second
      * to be the right child of the new node that is the root node.
      * 4. Adds root node to LinkedList and to PriorityQue before it
@@ -102,7 +104,6 @@ public class BuildTree {
      * 4. Repeats step 1-4 until there is only one node left
      */
     public void pairNodes() {
-
         do {
             leftChild = nodeLinkedList.get(0);
             leftChild.setIndex(0);
@@ -137,17 +138,39 @@ public class BuildTree {
                 }
             });
 
-        } while (nodeLinkedList.size() > 2);
+        } while (nodeLinkedList.size() > 1);
 
-        pairLastNodes();
+        //pairLastNodes();
 
-        /*do{
+        if(nodeLinkedList.size() == 2) {
+            leftChild = nodeLinkedList.get(0);
+            leftChild.setIndex(0);
+            rightChild = nodeLinkedList.get(1);
+            rightChild.setIndex(1);
+            Node n = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+            n.setLeftChild(leftChild);
+            n.setRightChild(rightChild);
+            root = n;
+            nodeLinkedList.add(root);
+
+            for (int i = 0; i < nodeLinkedList.size(); i++) {
+                if (!nodeLinkedList.get(i).equals(n)) {
+                    nodeLinkedList.remove(i);
+                } else {
+                    //System.out.println(root.getLeftChild().getLeftChild().getCharacter());
+                }
+            }
+            nodeLinkedList.clear();
+        }
+
+        /* THIS SECTION UNDER IS AN IMPLEMENTATION I WAS WORKING ON TO SHORTEN THEN CODE USED ABOVE, BUT NOT FULLY FUNCTIONAL
+        do{
 
             if(huffManTreeNodes.size() > 1){
                 leftChild = huffManTreeNodes.poll();
                 rightChild = huffManTreeNodes.poll();
 
-                Node node = new Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
+                iwl1CS21120Assign.HuffmanResources.Node node = new iwl1CS21120Assign.HuffmanResources.Node(leftChild.getCharacter() + rightChild.getCharacter(), leftChild.getValue() + rightChild.getValue());
                 node.setLeftChild(leftChild);
                 node.setRightChild(rightChild);
                 root = node;
@@ -156,12 +179,23 @@ public class BuildTree {
             } else {
                 root = huffManTreeNodes.poll();
             }
+            nodeLinkedList.add(root);
         } while (huffManTreeNodes.size() > 0);
-*/
+
+        // THIS IS NOT MY CODE
+        Collections.sort(nodeLinkedList, new Comparator<iwl1CS21120Assign.HuffmanResources.Node>() {
+            @Override
+            public int compare(iwl1CS21120Assign.HuffmanResources.Node o1, iwl1CS21120Assign.HuffmanResources.Node o2) {
+                return Integer.compare(o1.getValue(), o2.getValue());
+            }
+        });
+        */
 
     }
 
+
     public void pairLastNodes(){
+        /*
         // IF HUFFMANTREE ONLY HAS A SIZE OF 2
         if(nodeLinkedList.size() == 2) {
             leftChild = nodeLinkedList.get(0);
@@ -201,7 +235,7 @@ public class BuildTree {
             }
 
             nodeLinkedList.clear();
-        }
+        }*/
     }
 
     /**
@@ -349,6 +383,7 @@ public class BuildTree {
                     if(count > treeHeight){
                         treeHeight = count;
                     }
+                    System.out.println(n.getDepth());
                 }
             }
         }

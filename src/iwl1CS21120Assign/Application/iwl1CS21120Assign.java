@@ -1,3 +1,8 @@
+package iwl1CS21120Assign.Application;
+
+import iwl1CS21120Assign.HuffmanResources.BuildTree;
+import iwl1CS21120Assign.HuffmanResources.Node;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,7 +12,7 @@ import java.util.*;
 /**
  * Created by isaklovold on 17/11/2016.
  */
-public class Main {
+public class iwl1CS21120Assign {
 
     private Scanner in;
     private String message;
@@ -30,7 +35,7 @@ public class Main {
     /**
      * Constructor that initialize instance variables
      */
-    public Main() {
+    public iwl1CS21120Assign() {
         in = new Scanner(System.in);
 
         root = new Node();
@@ -40,7 +45,7 @@ public class Main {
     }
 
     /**
-     * Main method that runs the program cycle
+     * iwl1CS21120Assign.Application.iwl1CS21120Assign method that runs the program cycle
      * Case "1": reads file, create huffman tree and create a compressed file of the selected file
      * Case "2": prints out the frequency table
      * Case "3": prints out information about the root note in huffman tree
@@ -93,11 +98,9 @@ public class Main {
             // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
             frequency = new HashMap<>();
 
-            // COMPRESS SINGLE FILE
             System.out.println("Please enter name of file to compress without file extension: ");
             fileName = new File(in.next() + ".txt");
             createHuffmantree(fileName);
-
 
             // CREATE A COMPRESSED FILE
             compressFile();
@@ -205,11 +208,9 @@ public class Main {
             }
             write.close();
 
-
-            uncompressed = (fileName.length()*8);
+            uncompressed = fileName.length() * getUncompressedFileSize(frequency.size());
             compressed = newFile.length();
-            compressionRatio = (float) compressed/uncompressed;
-
+            compressionRatio = (float) uncompressed/compressed;
 
             System.out.println("Encoded file created!");
             System.out.println("Uncompressed file name: " + fileName);
@@ -227,6 +228,10 @@ public class Main {
         }
     }
 
+    public int getUncompressedFileSize(int c){
+        return (int) (Math.log(c)/Math.log(2))+1;
+    }
+
     /**
      * Prints out menu options
      */
@@ -242,12 +247,12 @@ public class Main {
     }
 
     /**
-     * Main method!
+     * iwl1CS21120Assign.Application.iwl1CS21120Assign method!
      * @param args
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        Main app = new Main();
+        iwl1CS21120Assign app = new iwl1CS21120Assign();
         app.runApp();
     }
 

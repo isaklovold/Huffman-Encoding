@@ -1,4 +1,4 @@
-import java.util.Comparator;
+package iwl1CS21120Assign.HuffmanResources;
 
 /**
  * Created by isaklovold on 22/11/2016.
@@ -11,7 +11,7 @@ public class Node {
 
     /**
      * Constructor that makes it possible to create an
-     * object of Node without passing any information
+     * object of iwl1CS21120Assign.HuffmanResources.Node without passing any information
      */
     public Node(){
         leftChild = null;
@@ -22,7 +22,7 @@ public class Node {
     }
 
     /**
-     * Constructor that initialises this object of Node
+     * Constructor that initialises this object of iwl1CS21120Assign.HuffmanResources.Node
      * @param character
      * @param value
      */
@@ -32,15 +32,15 @@ public class Node {
     }
 
     /**
-     * Gets left child of this Node object
-     * @return, returns left child of this Node object
+     * Gets left child of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return, returns left child of this iwl1CS21120Assign.HuffmanResources.Node object
      */
     public Node getLeftChild() {
         return leftChild;
     }
 
     /**
-     * Sets left child of this Node object
+     * Sets left child of this iwl1CS21120Assign.HuffmanResources.Node object
      * @param leftChild
      */
     public void setLeftChild(Node leftChild) {
@@ -48,15 +48,15 @@ public class Node {
     }
 
     /**
-     * Gets right child of this Node object
-     * @return, returns right child of this Node object
+     * Gets right child of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return, returns right child of this iwl1CS21120Assign.HuffmanResources.Node object
      */
     public Node getRightChild() {
         return rightChild;
     }
 
     /**
-     * Sets right child of this Node object
+     * Sets right child of this iwl1CS21120Assign.HuffmanResources.Node object
      * @param rightChild
      */
     public void setRightChild(Node rightChild) {
@@ -64,15 +64,15 @@ public class Node {
     }
 
     /**
-     * Gets the name of this Node object
-     * @return, returns the name of this Node object
+     * Gets the name of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return, returns the name of this iwl1CS21120Assign.HuffmanResources.Node object
      */
     public String getCharacter() {
         return character;
     }
 
     /**
-     * Sets the name of this Node object
+     * Sets the name of this iwl1CS21120Assign.HuffmanResources.Node object
      * @param character
      */
     public void setCharacter(String character) {
@@ -80,15 +80,15 @@ public class Node {
     }
 
     /**
-     * Gets the value of this Node object
-     * @return, returns the value of this Node object
+     * Gets the value of this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return, returns the value of this iwl1CS21120Assign.HuffmanResources.Node object
      */
     public int getValue() {
         return value;
     }
 
     /**
-     * Sets the value of this Node object
+     * Sets the value of this iwl1CS21120Assign.HuffmanResources.Node object
      * @param value
      */
     public void setValue(int value) {
@@ -108,15 +108,15 @@ public class Node {
     }
 
     /**
-     * Gets the depth value that this Node object has in the Huffman Tree
-     * @return, returns the depth value that this Node object has in the Huffman Tree
+     * Gets the depth value that this iwl1CS21120Assign.HuffmanResources.Node object has in the Huffman Tree
+     * @return, returns the depth value that this iwl1CS21120Assign.HuffmanResources.Node object has in the Huffman Tree
      */
     public int getDepth() {
         return depth;
     }
 
     /**
-     * Sets the depth value that this Node object has in the Huffman Tree
+     * Sets the depth value that this iwl1CS21120Assign.HuffmanResources.Node object has in the Huffman Tree
      * @param depth
      */
     public void setDepth(int depth) {
@@ -124,12 +124,12 @@ public class Node {
     }
 
     /**
-     * Prints out information about this Node object
-     * @return, returns a message that contains information about this Node object
+     * Prints out information about this iwl1CS21120Assign.HuffmanResources.Node object
+     * @return, returns a message that contains information about this iwl1CS21120Assign.HuffmanResources.Node object
      */
     @Override
     public String toString() {
-        return "Node{" +
+        return "iwl1CS21120Assign.HuffmanResources.Node{" +
                 "leftChild=" + leftChild +
                 ", rightChild=" + rightChild +
                 ", character='" + character + '\'' +

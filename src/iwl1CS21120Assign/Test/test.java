@@ -1,5 +1,6 @@
+package iwl1CS21120Assign.Test;
+
 import java.util.PriorityQueue;
-import java.util.function.Supplier;
 
 /**
  * Created by isakl on 02/12/2016.
@@ -18,6 +19,7 @@ public class test {
 
         int x, y, z;
 
+        /*
         do{
             x = huffmantree.poll();
             y = huffmantree.poll();
@@ -28,7 +30,7 @@ public class test {
             System.out.println("Z: "+ z);
 
         } while (huffmantree.size() > 1);
-        System.out.println(z);
+        System.out.println(z);*/
     }
 
 }
