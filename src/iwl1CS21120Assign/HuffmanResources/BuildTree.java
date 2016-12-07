@@ -192,8 +192,8 @@ public class BuildTree {
         while (iterator.hasNext()){
             Map.Entry mentry = (Map.Entry)iterator.next();
             String c = new StringBuilder().append(mentry.getKey()).toString();
-            if(c.equals("\r")) {
-                System.out.print("  \\r            ");
+            if(c.equals("\n")) {
+                System.out.print("  \\n            ");
             } else {
                 System.out.print("  " + mentry.getKey() + "             ");
             }

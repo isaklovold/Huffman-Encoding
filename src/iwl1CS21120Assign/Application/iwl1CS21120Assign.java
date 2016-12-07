@@ -30,6 +30,8 @@ public class iwl1CS21120Assign {
     private long uncompressed, compressed;
     private float compressionRatio;
 
+    private long startTime, endTime;
+
 
     /**
      * Constructor that initialize instance variables.
@@ -56,6 +58,7 @@ public class iwl1CS21120Assign {
      */
     public void runApp() throws IOException {
         String input;
+
         do{
             printMenu();
             input = in.nextLine().toUpperCase();
@@ -105,8 +108,8 @@ public class iwl1CS21120Assign {
             // DECLARES FREQUENCY MAP HERE SO THAT WE CAN READ MULTIPLE FILES AFTER EACH OTHER
             frequency = new HashMap<>();
 
-            System.out.println("Please enter name of file to compress without file extension: ");
-            fileName = new File(in.next() + ".txt");
+            System.out.println("Please enter name of file to compress, including the file extension: ");
+            fileName = new File(in.next());
             createHuffmantree(fileName);
 
             // CREATE A COMPRESSED FILE
@@ -187,17 +190,13 @@ public class iwl1CS21120Assign {
      * @throws IOException, by failed or interrupted I/O operations.
      */
     public void createHuffmantree(File file) throws IOException{
+        // STARTING TIME OF HUFFMAN TREE
+        startTime = System.currentTimeMillis();
+
         // READ FILE
         fileScanner = new Scanner(file);
 
-        message = "";
-
-        while (fileScanner.hasNextLine()){
-            message += fileScanner.nextLine();
-            if(fileScanner.hasNextLine()){
-                message += "\r";
-            }
-        }
+        message = fileScanner.useDelimiter("\\Z").next();
 
         // CREATE HUFFMAN TREE
         System.out.println("\n\nFile name: " + file.getName());
@@ -207,6 +206,8 @@ public class iwl1CS21120Assign {
         } else {
             System.err.println("You have not entered a message or a file yet, please try again later!");
         }
+
+
     }
 
     /**
@@ -216,7 +217,7 @@ public class iwl1CS21120Assign {
         System.out.println("\n@@@@@ File Compression @@@@@");
         encodedCharacter = huffmanTree.getEncodedCharacter();
         try{
-            File newFile = new File("encoded_" + fileName.getName());
+            File newFile = new File(dir + "/encoded_" + fileName.getName());
             PrintWriter write = new PrintWriter(newFile, "UTF-8");
             for(Character c: message.toCharArray())
             {
@@ -236,9 +237,11 @@ public class iwl1CS21120Assign {
             compressed = newFile.length();
             compressionRatio = (float) uncompressed/compressed;
 
+            endTime = System.currentTimeMillis();
+
             System.out.println("Encoded file created!");
-            System.out.println("Uncompressed file name: " + fileName);
-            System.out.println("Compressed file name: " + newFile);
+            System.out.println("Uncompressed file name: " + fileName.getName());
+            System.out.println("Compressed file name: " + newFile.getName());
             System.out.println("Uncompressed file (bits): " + uncompressed);
             System.out.println("Compressed file (bits): " + compressed);
             System.out.println("Compression ratio: " + compressionRatio);
@@ -247,6 +250,8 @@ public class iwl1CS21120Assign {
             System.out.println("Number of nodes: " + huffmanTree.getNumberOfNodes());
             System.out.println("Average node height: " + huffmanTree.getAverageHeight());
 
+            System.out.println("\nProcess took: " + ((float)(endTime - startTime) / 1000) + "s");
+
 
         } catch (IOException e){
 
@@ -254,6 +259,8 @@ public class iwl1CS21120Assign {
     }
 
     /**
+     * Footnote: 2
+     * This is not my method, I've gotten it from Jack Price.
      *
      * @param c, unique character.
      * @return the number of bits needed to represent the unique characters.
