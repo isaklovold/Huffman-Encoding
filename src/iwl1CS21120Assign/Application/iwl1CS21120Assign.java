@@ -58,9 +58,8 @@ public class iwl1CS21120Assign {
      */
     public void runApp() throws IOException {
         String input;
-
+        printMenu();
         do{
-            printMenu();
             input = in.nextLine().toUpperCase();
             switch (input){
                 case "1":
@@ -93,7 +92,9 @@ public class iwl1CS21120Assign {
                     System.out.println("Thanks for using the Huffman Encoding System by Isak Wisth Løvold");
                     System.exit(0);
                     break;
-                default:break;
+                default:
+                    printMenu();
+                    break;
             }
         } while(!input.equals("Q"));
     }
@@ -113,7 +114,7 @@ public class iwl1CS21120Assign {
             createHuffmantree(fileName);
 
             // CREATE A COMPRESSED FILE
-            compressFile();
+            compressFile(1);
 
             // ADDS HUFFMANTREE AND ROOT NODE OF HUFFMANTREE TO A MAP IF IT'S NOT ALREADY THERE
             if(huffmanTreeMap != null && !huffmanTreeMap.containsKey(huffmanTree) && !huffmanTreeMap.containsValue(root)){
@@ -143,7 +144,7 @@ public class iwl1CS21120Assign {
                         fileName = file;
                         createHuffmantree(fileName);
 
-                        compressFile();
+                        compressFile(2);
 
                         // ADDS HUFFMANTREE AND ROOT NODE OF HUFFMANTREE TO A MAP
                         if(huffmanTreeMap != null && !huffmanTreeMap.containsKey(huffmanTree) && !huffmanTreeMap.containsValue(root)){
@@ -213,11 +214,17 @@ public class iwl1CS21120Assign {
     /**
      * Creates a compressed version of a selected file.
      */
-    public void compressFile(){
+    public void compressFile(int option){
         System.out.println("\n@@@@@ File Compression @@@@@");
         encodedCharacter = huffmanTree.getEncodedCharacter();
+        System.out.println("OPTION: " + option);
         try{
-            File newFile = new File(dir + "/encoded_" + fileName.getName());
+            File newFile;
+            if(option == 1) {
+                newFile = new File("encoded_" + fileName.getName());
+            } else {
+                newFile = new File(dir + "/encoded_" + fileName.getName());
+            }
             PrintWriter write = new PrintWriter(newFile, "UTF-8");
             for(Character c: message.toCharArray())
             {
@@ -260,7 +267,7 @@ public class iwl1CS21120Assign {
 
     /**
      * Footnote: 2
-     * This is not my method, I've gotten it from Jack Price.
+     * This is not my method, I've gotten it from Jack Price (jap47).
      *
      * @param c, unique character.
      * @return the number of bits needed to represent the unique characters.
